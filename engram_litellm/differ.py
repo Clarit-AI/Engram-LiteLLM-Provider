@@ -3,7 +3,7 @@ import json
 import logging
 from typing import Dict, List, Optional
 
-from litellm.llms.engram.types import ConversationState, PrefixMatch
+from .types import ConversationState, PrefixMatch
 
 logger = logging.getLogger(__name__)
 

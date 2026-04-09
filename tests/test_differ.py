@@ -1,6 +1,6 @@
 import pytest
-from litellm.llms.engram.state.differ import ContextDiffer, _hash_messages
-from litellm.llms.engram.types import ConversationState
+from engram_litellm.differ import ContextDiffer, _hash_messages
+from engram_litellm.types import ConversationState
 
 
 class TestContextDiffer:

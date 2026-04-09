@@ -7,13 +7,13 @@ from typing import Any, Dict, List, Optional, Tuple
 
 import httpx
 
-from litellm.llms.engram.errors import RestoreError
-from litellm.llms.engram.snapshot.handler import SnapshotClient
-from litellm.llms.engram.state.differ import ContextDiffer
-from litellm.llms.engram.state.tokenizer import TokenizerClient
-from litellm.llms.engram.state.tracker import ConversationTracker
-from litellm.llms.engram.streaming.wrapper import EngramStreamWrapper
-from litellm.llms.engram.types import EngramStateMetadata, PrefixMatch
+from .errors import RestoreError
+from .snapshot import SnapshotClient
+from .differ import ContextDiffer
+from .tokenizer import TokenizerClient
+from .tracker import ConversationTracker
+from .streaming import EngramStreamWrapper
+from .types import EngramStateMetadata, PrefixMatch
 
 logger = logging.getLogger(__name__)
 

@@ -6,7 +6,7 @@ import threading
 import uuid
 from typing import Dict, List, Optional, Tuple
 
-from litellm.llms.engram.types import ConversationState
+from .types import ConversationState
 
 logger = logging.getLogger(__name__)
 

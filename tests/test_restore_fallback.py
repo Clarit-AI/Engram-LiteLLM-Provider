@@ -1,8 +1,8 @@
 import pytest
 import httpx
-from litellm.llms.engram.chat.transformation import EngramChatConfig
-from litellm.llms.engram.types import EngramStateMetadata
-from tests.test_litellm.llms.engram.fixtures.mock_engram_server import (
+from engram_litellm.transformation import EngramChatConfig
+from engram_litellm.types import EngramStateMetadata
+from tests.fixtures.mock_engram_server import (
     MockEngramState,
     MockEngramTransport,
 )
@@ -46,7 +46,7 @@ class TestRestoreFallback:
         client = httpx.AsyncClient(transport=transport, base_url="http://mock")
 
         # Need a snapshot to restore
-        from litellm.llms.engram.snapshot.handler import SnapshotClient
+        from engram_litellm.snapshot import SnapshotClient
         snap_client = SnapshotClient(api_base="http://mock", client=client)
         await snap_client.save_snapshot("conv-1", turn_number=1)
 
@@ -71,7 +71,7 @@ class TestRestoreFallback:
         transport = MockEngramTransport(state)
         client = httpx.AsyncClient(transport=transport, base_url="http://mock")
 
-        from litellm.llms.engram.snapshot.handler import SnapshotClient
+        from engram_litellm.snapshot import SnapshotClient
         snap_client = SnapshotClient(api_base="http://mock", client=client)
         await snap_client.save_snapshot("my-conv", turn_number=3)
 
@@ -95,7 +95,7 @@ class TestRestoreFallback:
         transport = MockEngramTransport(state)
         client = httpx.AsyncClient(transport=transport, base_url="http://mock")
 
-        from litellm.llms.engram.snapshot.handler import SnapshotClient
+        from engram_litellm.snapshot import SnapshotClient
         snap_client = SnapshotClient(api_base="http://mock", client=client)
         await snap_client.save_snapshot("conv-1", turn_number=1)
 

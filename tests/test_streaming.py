@@ -1,6 +1,6 @@
 import asyncio
 import pytest
-from litellm.llms.engram.streaming.wrapper import EngramStreamWrapper
+from engram_litellm.streaming import EngramStreamWrapper
 
 
 class TestEngramStreamWrapper:

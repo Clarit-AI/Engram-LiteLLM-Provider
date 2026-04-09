@@ -1,8 +1,8 @@
 import pytest
 import httpx
-from litellm.llms.engram.snapshot.handler import SnapshotClient
-from litellm.llms.engram.errors import RestoreError, SaveError, SnapshotError
-from tests.test_litellm.llms.engram.fixtures.mock_engram_server import (
+from engram_litellm.snapshot import SnapshotClient
+from engram_litellm.errors import RestoreError, SaveError, SnapshotError
+from tests.fixtures.mock_engram_server import (
     MockEngramState,
     MockEngramTransport,
     create_mock_client,

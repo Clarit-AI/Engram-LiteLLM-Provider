@@ -3,8 +3,8 @@ from typing import Any, Dict, List, Optional
 
 import httpx
 
-from litellm.llms.engram.errors import RestoreError, SaveError, SnapshotError
-from litellm.llms.engram.types import (
+from .errors import RestoreError, SaveError, SnapshotError
+from .types import (
     DeleteSnapshotResponse,
     RestoreSnapshotResponse,
     SaveSnapshotResponse,

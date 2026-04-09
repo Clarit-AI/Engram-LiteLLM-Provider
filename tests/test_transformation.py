@@ -1,7 +1,7 @@
 import pytest
 import httpx
-from litellm.llms.engram.chat.transformation import EngramChatConfig
-from tests.test_litellm.llms.engram.fixtures.mock_engram_server import (
+from engram_litellm.transformation import EngramChatConfig
+from tests.fixtures.mock_engram_server import (
     MockEngramState,
     MockEngramTransport,
 )
@@ -164,7 +164,7 @@ class TestAsyncCompletion:
     @pytest.mark.asyncio
     async def test_completion_with_restore(self, config, mock_client, mock_state):
         # Setup: save a snapshot first
-        from litellm.llms.engram.snapshot.handler import SnapshotClient
+        from engram_litellm.snapshot import SnapshotClient
 
         snap_client = SnapshotClient(api_base="http://engram-mock", client=mock_client)
         await snap_client.save_snapshot("c1", turn_number=1)
